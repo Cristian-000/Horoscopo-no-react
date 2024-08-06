@@ -12,6 +12,36 @@
     </style>
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Horóscopo Diario</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Signos del Zodiaco
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="signo.html?sign=aries">Aries</a>
+                        <a class="dropdown-item" href="signo.html?sign=taurus">Tauro</a>
+                        <a class="dropdown-item" href="signo.html?sign=gemini">Géminis</a>
+                        <a class="dropdown-item" href="signo.html?sign=cancer">Cáncer</a>
+                        <a class="dropdown-item" href="signo.html?sign=leo">Leo</a>
+                        <a class="dropdown-item" href="signo.html?sign=virgo">Virgo</a>
+                        <a class="dropdown-item" href="signo.html?sign=libra">Libra</a>
+                        <a class="dropdown-item" href="signo.html?sign=scorpio">Escorpio</a>
+                        <a class="dropdown-item" href="signo.html?sign=sagittarius">Sagitario</a>
+                        <a class="dropdown-item" href="signo.html?sign=capricorn">Capricornio</a>
+                        <a class="dropdown-item" href="signo.html?sign=aquarius">Acuario</a>
+                        <a class="dropdown-item" href="signo.html?sign=pisces">Piscis</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
     <div class="container">
         <h1 class="text-center my-5">Horóscopo Diario</h1>
         <div class="row">
@@ -42,6 +72,7 @@
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
