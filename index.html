@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horóscopo Diario</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .signo-card {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center my-5">Horóscopo Diario</h1>
+        <div class="row">
+            <div class="col-md-4 offset-md-4">
+                <select id="signoSelect" class="form-control">
+                    <option value="">Selecciona tu signo</option>
+                    <option value="aries">Aries</option>
+                    <option value="taurus">Tauro</option>
+                    <option value="gemini">Géminis</option>
+                    <option value="cancer">Cáncer</option>
+                    <option value="leo">Leo</option>
+                    <option value="virgo">Virgo</option>
+                    <option value="libra">Libra</option>
+                    <option value="scorpio">Escorpio</option>
+                    <option value="sagittarius">Sagitario</option>
+                    <option value="capricorn">Capricornio</option>
+                    <option value="aquarius">Acuario</option>
+                    <option value="pisces">Piscis</option>
+                </select>
+                <button id="obtenerHoroscopo" class="btn btn-primary btn-block mt-3">Obtener Horóscopo</button>
+            </div>
+        </div>
+        <div class="row">
+            <div id="resultado" class="col-md-12 mt-5">
+                <!-- Aquí se mostrarán los resultados -->
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
