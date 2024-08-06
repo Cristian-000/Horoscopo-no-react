@@ -23,6 +23,7 @@ function mostrarResultado(data) {
             <div class="card-body">
                 <h5 class="card-title">${data.sign}</h5>
                 <p class="card-text">${data.horoscope}</p>
+                <p class="card-text"><small class="text-muted">Fecha: ${data.date}</small></p>
             </div>
         </div>
     `;
