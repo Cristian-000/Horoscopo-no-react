@@ -1,31 +1,20 @@
-// script.js
-
 async function obtenerHoroscopo(api) {
     let signo;
     let url;
     let options = {};
 
-    if (api === 'astrologyAPI') {
+    if (api === 'aztro') {
         signo = document.getElementById('signoSelect1').value;
-        url = `https://json.astrologyapi.com/v1/horoscope/${signo}`; // Sustituir con la URL real de la API
+        url = `https://aztro.sameerkumar.website/?sign=${signo}&day=today`; // API gratuita
         options = {
-            method: 'GET',
-            headers: {
-                'Authorization': 'Bearer YOUR_API_KEY' // Sustituir con tu clave de API real
-            }
+            method: 'POST', // La API requiere POST
         };
-    } else if (api === 'astroAPI') {
+    } else if (api === 'horoscopeAPI') {
         signo = document.getElementById('signoSelect2').value;
-        url = `https://api.astroapi.com/v1/horoscope/${signo}`; // Sustituir con la URL real de la API
-        options = {
-            method: 'GET',
-            headers: {
-                'Authorization': 'Bearer YOUR_API_KEY' // Sustituir con tu clave de API real
-            }
-        };
-    } else if (api === 'astroSeek') {
+        url = `https://horoscope-api.herokuapp.com/horoscope/today/${signo}`; // API gratuita
+    } else if (api === 'openAstrology') {
         signo = document.getElementById('signoSelect3').value;
-        url = `https://api.astroseek.com/horoscope/${signo}`; // Sustituir con la URL real de la API
+        url = `https://www.tarot.api/astrology/${signo}/daily`; // API gratuita
     }
 
     try {
@@ -40,8 +29,8 @@ async function obtenerHoroscopo(api) {
 function mostrarResultado(data, api) {
     const resultadoDiv = document.getElementById('resultado');
     const signo = data.sign || 'Signo desconocido';
-    const horoscopo = data.horoscope || 'Horóscopo no disponible';
-    const fecha = data.date || 'Fecha no disponible';
+    const horoscopo = data.description || data.horoscope || 'Horóscopo no disponible'; // Ajusta según la API
+    const fecha = data.current_date || data.date || 'Fecha no disponible'; // Ajusta según la API
 
     resultadoDiv.innerHTML += `
         <div class="card result-card">
