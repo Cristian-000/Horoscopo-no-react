@@ -3,21 +3,21 @@ async function obtenerHoroscopo(api) {
     let url;
     let options = {};
 
-    if (api === 'astrologyAPI') {
+    if (api === 'aztro') {
         signo = document.getElementById('signoSelect1').value;
         url = `https://aztro.sameerkumar.website/?sign=${signo}&day=today`; // API gratuita
         options = {
             method: 'POST', // La API requiere POST
         };
-    } else if (api === 'astroAPI') {
+    } else if (api === 'ohmanda') {
         signo = document.getElementById('signoSelect2').value;
-        url = `https://horoscope-api.herokuapp.com/horoscope/today/${signo}`; // API gratuita
+        url = `https://ohmanda.com/api/horoscope/${signo}/`; // API gratuita
         options = {
             method: 'GET', // La API requiere GET
         };
-    } else if (api === 'astroSeek') {
+    } else if (api === 'horoscopeFree') {
         signo = document.getElementById('signoSelect3').value;
-        url = `https://www.tarot.api/astrology/${signo}/daily`; // API gratuita
+        url = `https://horoscope-free-api.herokuapp.com/horoscope/today/${signo}`; // API gratuita
         options = {
             method: 'GET', // La API requiere GET
         };
@@ -42,15 +42,15 @@ function mostrarResultado(data, api) {
     let fecha;
 
     // Ajustar según la estructura de respuesta de cada API
-    if (api === 'astrologyAPI') {
+    if (api === 'aztro') {
         horoscopo = data.description || 'Horóscopo no disponible';
         fecha = data.current_date || 'Fecha no disponible';
-    } else if (api === 'astroAPI') {
+    } else if (api === 'ohmanda') {
         horoscopo = data.horoscope || 'Horóscopo no disponible';
         fecha = data.date || 'Fecha no disponible';
-    } else if (api === 'astroSeek') {
-        horoscopo = data.description || 'Horóscopo no disponible';
-        fecha = data.current_date || 'Fecha no disponible';
+    } else if (api === 'horoscopeFree') {
+        horoscopo = data.horoscope || 'Horóscopo no disponible';
+        fecha = data.date || 'Fecha no disponible';
     }
 
     resultadoDiv.innerHTML += `
