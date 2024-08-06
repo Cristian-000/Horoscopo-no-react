@@ -3,76 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Horóscopo Diario</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>Horóscopos Múltiples</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <style>
-        .signo-card {
-            margin-bottom: 20px;
+        .result-card {
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Horóscopo Diario</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Signos del Zodiaco
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="signo.html?sign=aries">Aries</a>
-                        <a class="dropdown-item" href="signo.html?sign=taurus">Tauro</a>
-                        <a class="dropdown-item" href="signo.html?sign=gemini">Géminis</a>
-                        <a class="dropdown-item" href="signo.html?sign=cancer">Cáncer</a>
-                        <a class="dropdown-item" href="signo.html?sign=leo">Leo</a>
-                        <a class="dropdown-item" href="signo.html?sign=virgo">Virgo</a>
-                        <a class="dropdown-item" href="signo.html?sign=libra">Libra</a>
-                        <a class="dropdown-item" href="signo.html?sign=scorpio">Escorpio</a>
-                        <a class="dropdown-item" href="signo.html?sign=sagittarius">Sagitario</a>
-                        <a class="dropdown-item" href="signo.html?sign=capricorn">Capricornio</a>
-                        <a class="dropdown-item" href="signo.html?sign=aquarius">Acuario</a>
-                        <a class="dropdown-item" href="signo.html?sign=pisces">Piscis</a>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </nav>
-
     <div class="container">
-        <h1 class="text-center my-5">Horóscopo Diario</h1>
-        <div class="row">
-            <div class="col-md-4 offset-md-4">
-                <select id="signoSelect" class="form-control">
-                    <option value="">Selecciona tu signo</option>
-                    <option value="aries">Aries</option>
-                    <option value="taurus">Tauro</option>
-                    <option value="gemini">Géminis</option>
-                    <option value="cancer">Cáncer</option>
-                    <option value="leo">Leo</option>
-                    <option value="virgo">Virgo</option>
-                    <option value="libra">Libra</option>
-                    <option value="scorpio">Escorpio</option>
-                    <option value="sagittarius">Sagitario</option>
-                    <option value="capricorn">Capricornio</option>
-                    <option value="aquarius">Acuario</option>
-                    <option value="pisces">Piscis</option>
-                </select>
-                <button id="obtenerHoroscopo" class="btn btn-primary btn-block mt-3">Obtener Horóscopo</button>
-            </div>
+        <h1 class="mt-5">Obtener Horóscopo de Varias APIs</h1>
+        
+        <div class="form-group mt-4">
+            <label for="signoSelect1">Selecciona un signo (AstrologyAPI):</label>
+            <select class="form-control" id="signoSelect1">
+                <option value="aries">Aries</option>
+                <option value="taurus">Tauro</option>
+                <option value="gemini">Géminis</option>
+                <option value="cancer">Cáncer</option>
+                <option value="leo">Leo</option>
+                <option value="virgo">Virgo</option>
+                <option value="libra">Libra</option>
+                <option value="scorpio">Escorpio</option>
+                <option value="sagittarius">Sagitario</option>
+                <option value="capricorn">Capricornio</option>
+                <option value="aquarius">Acuario</option>
+                <option value="pisces">Piscis</option>
+            </select>
+            <button class="btn btn-primary mt-2" onclick="obtenerHoroscopo('astrologyAPI')">Obtener Horóscopo</button>
         </div>
-        <div class="row">
-            <div id="resultado" class="col-md-12 mt-5">
-                <!-- Aquí se mostrarán los resultados -->
-            </div>
+        
+        <div class="form-group mt-4">
+            <label for="signoSelect2">Selecciona un signo (AstroAPI):</label>
+            <select class="form-control" id="signoSelect2">
+                <option value="aries">Aries</option>
+                <option value="taurus">Tauro</option>
+                <option value="gemini">Géminis</option>
+                <option value="cancer">Cáncer</option>
+                <option value="leo">Leo</option>
+                <option value="virgo">Virgo</option>
+                <option value="libra">Libra</option>
+                <option value="scorpio">Escorpio</option>
+                <option value="sagittarius">Sagitario</option>
+                <option value="capricorn">Capricornio</option>
+                <option value="aquarius">Acuario</option>
+                <option value="pisces">Piscis</option>
+            </select>
+            <button class="btn btn-primary mt-2" onclick="obtenerHoroscopo('astroAPI')">Obtener Horóscopo</button>
         </div>
+
+        <div class="form-group mt-4">
+            <label for="signoSelect3">Selecciona un signo (AstroSeek):</label>
+            <select class="form-control" id="signoSelect3">
+                <option value="aries">Aries</option>
+                <option value="taurus">Tauro</option>
+                <option value="gemini">Géminis</option>
+                <option value="cancer">Cáncer</option>
+                <option value="leo">Leo</option>
+                <option value="virgo">Virgo</option>
+                <option value="libra">Libra</option>
+                <option value="scorpio">Escorpio</option>
+                <option value="sagittarius">Sagitario</option>
+                <option value="capricorn">Capricornio</option>
+                <option value="aquarius">Acuario</option>
+                <option value="pisces">Piscis</option>
+            </select>
+            <button class="btn btn-primary mt-2" onclick="obtenerHoroscopo('astroSeek')">Obtener Horóscopo</button>
+        </div>
+
+        <div id="resultado" class="mt-4"></div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
